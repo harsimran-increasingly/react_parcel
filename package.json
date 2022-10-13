@@ -1,0 +1,23 @@
+{
+  "name": "react-parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel public/index.html",
+    "build": "parcel build public/main.html",
+    "build:client": "rm -rf production && parcel build public/main.html --no-source-maps --out-dir production/ --out-file index.* && rm -rf production/src.* && rm -r production/public"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "parcel-bundler": "^1.12.5"
+  }
+}
