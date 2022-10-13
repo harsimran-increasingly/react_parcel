@@ -1,0 +1,26 @@
+.inc_pdp_bundle_cart{
+    background-color: #fff;
+    min-width: 300px;
+    padding: 10px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &_title {
+        text-align: center;
+    }
+    &_button{
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+        height: 40px;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+            background-color: #111;
+        }
+    }
+}
