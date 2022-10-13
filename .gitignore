@@ -22,5 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .cache
-.parce-cache
+.cache/*
+.parce-cache/*
 production
