@@ -1,0 +1,24 @@
+.inc_product_block {
+    max-width: 300px;
+    background-color: #fff;
+}
+.inc_product_image {
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    &_element{
+        margin: 0 auto;
+    }
+}
+
+.inc_product_description{
+    padding: 20px;
+    &_name {    
+        text-align: center;
+        font-weight: 600;
+    }
+    &_price {
+        text-align: center;
+    }
+}
