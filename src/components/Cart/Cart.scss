@@ -1,16 +1,22 @@
-.inc_pdp_bundle_cart{
+.inc_pdp_bundle_cart {
     background-color: #fff;
     min-width: 300px;
-    padding: 10px;
+    // padding: 10px;
     height: 430px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    &_title {
-        text-align: center;
+
+    &_block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+       
     }
-    &_button{
-        background-color: #333;
+
+    &_button {
+        background-color: #111;
         color: #fff;
         padding: 5px;
         text-align: center;
@@ -18,9 +24,89 @@
         margin-top: 10px;
         height: 40px;
         cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
         transition: all 0.2s;
         &:hover {
             background-color: #111;
         }
+    }
+
+    &_added_products{
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    &_product {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        &_image {
+            width: 50px;
+            height: 50px;
+        }
+
+        &_remove {
+            background: #111;
+            color: #fff;
+            height: 25px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        &_description {
+            max-width: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 10px;
+            &_title {
+                margin-bottom: 0px;
+                max-width: inherit;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 14px;
+                text-overflow: ellipsis;
+            }
+            &_price {
+                margin-top: 0;
+            }
+        }
+    }
+    &_footer{
+        padding: 10px;
+    }
+    &_total{
+        // padding: 10px;
+    }
+    &_button{
+        padding: 10px;
+    }
+    /* width */
+    ::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
 }

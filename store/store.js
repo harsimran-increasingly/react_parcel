@@ -11,12 +11,17 @@ const useStore = create((set, get) => ({
             set({
                 bundles: TEMPBUNDLES
             })
+            get().addToStore(TEMPBUNDLES.ProductsDetail[0])
             return
         }
         const response = await fetch(pond)
         set({
             bundles: await response.json()
         })
+        return {
+            ...state,
+            cart: [...state.cart,TEMPBUNDLES.ProductsDetail[0]]
+        };
     },
     addToStore: (product) => {
 
