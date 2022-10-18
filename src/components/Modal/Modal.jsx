@@ -1,5 +1,6 @@
 import React from 'react'
-import Modal  from 'react-modal';
+import ReactModal from 'react-modal';
+
 const customStyles = {
     content: {
         top: '50%',
@@ -11,7 +12,7 @@ const customStyles = {
     },
 };
 
-function ModalPopup() {
+function Modal() {
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     function openModal() {
@@ -19,30 +20,29 @@ function ModalPopup() {
     }
 
     function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
+
     }
 
     function closeModal() {
         setIsOpen(false);
     }
-   
+
     return (
-        <div> <div>
-            <button className='inc_product_description_button' onClick={()=> openModal()}>Select Option</button>
-            <Modal
+        <div>
+            <button type='button' className='inc_product_description_button' onClick={() => openModal()}>Select Option</button>
+            <ReactModal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
+                onAfterOpen={() => afterOpenModal}
+                onRequestClose={() => closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-              
-                <button onClick={closeModal}>close</button>
-                
-            </Modal>
-        </div></div>
+
+                <button type='button' onClick={closeModal}>close</button>
+
+            </ReactModal>
+        </div>
     )
 }
 
-export default ModalPopup
+export default Modal

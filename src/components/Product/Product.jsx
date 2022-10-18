@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { formatter } from '../../../lib/helpers'
 import useStore from '../../../store/store'
 import './Product.scss'
-import ModalPopup from '../Modal/Modal';
+import Modal from '../Modal/Modal';
 
 function ActionButton({ isPresent, performAction, ProductType }) {
     if (ProductType === "simple") {
         return (<button type='button' className={isPresent ? " inc_product_description_button inc_product_description_button_added" :
             "inc_product_description_button"} onClick={() => performAction()}>{isPresent ? "Added" : "Add To Cart"}</button>)
     }
-    return <ModalPopup />
+    return <Modal />
 }
 function Product(props) {
 
