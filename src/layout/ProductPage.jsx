@@ -13,6 +13,7 @@ function ProductPage() {
     const fetchBundles = useStore((store) => store.fetchBundle);
     const bundles = useStore((store) => store.bundles);
     useEffect(() => {
+        
         fetchBundles("TEST");
     }, [bundles]);
 
@@ -20,7 +21,7 @@ function ProductPage() {
         return;
     }
     return (
-        <div> <div className="inc_pdp_block">
+        <div> <div className={window.location.host == "www.balsamhill.co.uk" ? "inc_pdp_block inc_pdp_block_balsam" : "inc_pdp_block"}>
             <h2 className="inc_pdp_title">Frequently Bought Together</h2>
             <div className="inc_pdp_product_list_block">
                 <div className="inc_pdp_main_product_block">

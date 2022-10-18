@@ -1,5 +1,6 @@
 import create from 'zustand';
 import TEMPBUNDLES from '../lib/bundle.json'
+import TEMPBUNDLESBALSAM from '../lib/balsambundle.json'
 const useStore = create((set, get) => ({
     bundles: {},
     mainProduct: [],
@@ -8,10 +9,11 @@ const useStore = create((set, get) => ({
     addedProductIds : [],
     fetchBundle: async (url) => {
         if (url == "TEST") {
+            let temp_bundles = window.location.host == "www.balsamhill.co.uk" ? TEMPBUNDLESBALSAM : TEMPBUNDLES  
             set({
-                bundles: TEMPBUNDLES
+                bundles: temp_bundles
             })
-            get().addToStore(TEMPBUNDLES.ProductsDetail[0])
+            get().addToStore(temp_bundles.ProductsDetail[0])
             return
         }
         const response = await fetch(pond)
@@ -20,7 +22,7 @@ const useStore = create((set, get) => ({
         })
         return {
             ...state,
-            cart: [...state.cart,TEMPBUNDLES.ProductsDetail[0]]
+            cart: [...state.cart,temp_bundles.ProductsDetail[0]]
         };
     },
     addToStore: (product) => {
